@@ -9,6 +9,27 @@
       Title="CazinoPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock>
+            <Run Text="Логин:"/>
+            <Run Text="{Binding User.Login}"/>
+        </TextBlock>
+
+        <TextBlock Text="КАЗИНО" Grid.Column="1" FontSize="30"/> 
+
+        <TextBlock Grid.Column="2">
+            <Run Text="Баланс:"/>
+            <Run Text="{Binding User.Points}"/>
+        </TextBlock>
     </Grid>
 </Page>

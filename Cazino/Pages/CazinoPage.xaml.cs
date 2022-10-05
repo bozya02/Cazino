@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cazino.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace Cazino.Pages
     /// </summary>
     public partial class CazinoPage : Page
     {
-        public CazinoPage()
+        public User User { get; set; }
+        public CazinoPage(User user)
         {
             InitializeComponent();
+
+            User = user;
+
+            this.DataContext = this;
         }
     }
 }

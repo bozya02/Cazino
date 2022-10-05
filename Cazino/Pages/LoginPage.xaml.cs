@@ -34,8 +34,7 @@ namespace Cazino.Pages
             User user = null;
             if ((user = DataAccess.GetUser(login, password)) != null)
             {
-                App.User = user;
-                NavigationService.Navigate(new CazinoPage());
+                NavigationService.Navigate(new CazinoPage(user));
             }
             else
             {
