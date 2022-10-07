@@ -23,15 +23,15 @@
 
         <TextBlock Text="Регистрация" Grid.ColumnSpan="2" Grid.Row="0" FontSize="36"/>
 
-        <TextBlock Text="Логин" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="Логин" Grid.Column="0" Grid.Row="1" FontSize="30"/>
         <TextBox x:Name="tbLogin" Grid.Column="1" Grid.Row="1"/>
 
-        <TextBlock Text="Пароль" Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Text="Пароль" Grid.Column="0" Grid.Row="2" FontSize="30"/>
         <PasswordBox x:Name="pbPassword" Grid.Column="1" Grid.Row="2"/>
 
-        <TextBlock Text="Повторите пароль" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="Повторите пароль" Grid.Column="0" Grid.Row="3" FontSize="30"/>
         <PasswordBox x:Name="pbSecondPassword" Grid.Column="1" Grid.Row="3"/>
 
-        <Button x:Name="btnRegistration" Content="Зарегистрироваться" Grid.ColumnSpan="2" Grid.Row="4" Click="btnRegistration_Click" HorizontalAlignment="Center"/>
+        <Button x:Name="btnRegistration" Content="Зарегистрироваться" FontSize="30" Grid.ColumnSpan="2" Grid.Row="4" Click="btnRegistration_Click" HorizontalAlignment="Center" Padding="0" Height="100"/>
     </Grid>
 </Page>

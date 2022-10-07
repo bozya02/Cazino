@@ -42,7 +42,7 @@ namespace Cazino.Pages
             }
             */
 
-            NavigationService.Navigate(new CazinoPage(new User { Login = "123", Points = 100 }));
+            NavigationService.Navigate(new CazinoPage(new User { Login = "123", Points = 15 }));
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)

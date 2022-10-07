@@ -36,6 +36,8 @@
         <Image x:Name="imgSlot2" Source="/Cazino;component/Resources/default.png" Grid.Column="1" Grid.Row="1" Margin="20"/>
         <Image x:Name="imgSlot3" Source="/Cazino;component/Resources/default.png" Grid.Column="2" Grid.Row="1" Margin="20"/>
 
-        <Button x:Name="btnSpin" Content="Крутить" Grid.Column="1" Grid.Row="2" FontSize="40" Padding="0" Margin="0" Click="btnSpin_Click"/> 
+        <Button x:Name="btnSpin" Content="Крутить" Grid.Column="1" Grid.Row="2" FontSize="40" Padding="0" Margin="0" Click="btnSpin_Click"/>
+
+        <Button x:Name="btnTakeCredit" Content="Взять 100 в кредит на 10 ходов" Grid.Column="2" Grid.Row="2" FontSize="16" Padding="0" Margin="10" Click="btnTakeCredit_Click" Visibility="Hidden"/>
     </Grid>
 </Page>

@@ -24,7 +24,9 @@ namespace Cazino.DB
             {
                 Login = login,
                 Password = password,
-                Points = 100
+                Points = 100,
+                InCreditAttempt = 10,
+                IsCreditTaking = true
             };
 
             CazinoEntities.GetContext().Users.Add(user);

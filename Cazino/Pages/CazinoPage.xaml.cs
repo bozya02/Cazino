@@ -40,9 +40,35 @@ namespace Cazino.Pages
 
         private async void btnSpin_Click(object sender, RoutedEventArgs e)
         {
-            if (User.Points < Bet)
+            if ()
+            
+            if (User.IsCreditTaking && User.InCreditAttempt > 0)
+            {
+                User.InCreditAttempt--;
+            }
+            else if (User.IsCreditTaking && User.InCreditAttempt == 0)
+            {
+                MessageBox.Show("Время отдавать долг", "Хи-хи-ха");
+                User.Points -= 100;
+                tbBalance.Text = User.Points.ToString();
+
+                if (User.Points < 0)
+                {
+                    User.IsBankrupt = true;
+                    MessageBox.Show("Вы полный бакнрот, больше здесь вы не играете", "ЛОХ");
+                }
+                else
+                {
+                    User.IsCreditTaking = false;
+                    User.InCreditAttempt = 10;
+                }   
+            }
+            
+
+            if (User.Points < Bet && !IsSpinning)
             {
                 MessageBox.Show("У вас нехватка баланса", "Печаль");
+                ChangeCreditVisibility(Visibility.Visible);
                 return;
             }
 
@@ -99,11 +125,27 @@ namespace Cazino.Pages
             }
 
             tbBalance.Text = User.Points.ToString();
+
+            //CazinoEntities.GetContext().SaveChanges();
         }
 
         public void SetImage(ref Image image, int imageNum)
         {
             image.Source = new BitmapImage(new Uri($"/Cazino;component/Resources/image{imageNum}.png", UriKind.Relative));
+        }
+
+        private void btnTakeCredit_Click(object sender, RoutedEventArgs e)
+        {
+            User.Points += 100;
+            tbBalance.Text = User.Points.ToString();
+            ChangeCreditVisibility(Visibility.Hidden);
+
+            //CazinoEntities.GetContext().SaveChanges();
+        }
+
+        public void ChangeCreditVisibility(Visibility visibility)
+        {
+            btnTakeCredit.Visibility = visibility;
         }
     }
 }

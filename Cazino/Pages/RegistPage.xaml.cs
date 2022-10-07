@@ -29,16 +29,16 @@ namespace Cazino.Pages
         private void btnRegistration_Click(object sender, RoutedEventArgs e)
         {
             var login = tbLogin.Text;
-            var passwrod = pbPassword.Password;
+            var password = pbPassword.Password;
             var secondPassword = pbSecondPassword.Password;
 
-            if (passwrod == null || login == null)
+            if (password == "" || login == "")
             {
                 MessageBox.Show("Логин и/или пароль не могут быть пустыми", "Ошибка");
                 return;
             }
 
-            if (passwrod != secondPassword)
+            if (password != secondPassword)
             {
                 MessageBox.Show("Пароли не совпадают", "Ошибка");
                 return;
@@ -50,9 +50,9 @@ namespace Cazino.Pages
                 return;
             }
 
-            if (DataAccess.RegistartionUser(login, passwrod))
+            if (DataAccess.RegistartionUser(login, password))
             {
-                var user = DataAccess.GetUser(login, passwrod);
+                var user = DataAccess.GetUser(login, password);
                 NavigationService.Navigate(new LoginPage());
             }
         }
