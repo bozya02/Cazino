@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -138,6 +139,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EntityDeploy Include="DB\CazinoEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -169,6 +171,13 @@
       <DependentUpon>CazinoEntities.edmx</DependentUpon>
       <LastGenOutput>CazinoEntities1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\points.png" />
+    <Resource Include="Resources\image5.png" />
+    <Resource Include="Resources\image4.png" />
+    <Resource Include="Resources\image3.png" />
+    <Resource Include="Resources\image2.png" />
+    <Resource Include="Resources\image1.png" />
+    <Resource Include="Resources\default.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
