@@ -26,7 +26,8 @@ namespace Cazino.DB
                 Password = password,
                 Points = 100,
                 InCreditAttempt = 10,
-                IsCreditTaking = true
+                IsCreditTaking = true,
+                IsBankrupt = false
             };
 
             CazinoEntities.GetContext().Users.Add(user);
@@ -35,7 +36,7 @@ namespace Cazino.DB
 
         public static bool CheckLogin(string login)
         {
-            return GetUsers().Where(user => user.Login == login).Count() == 0;
+            return GetUsers().Count(user => user.Login == login) == 0;
         }
 
         

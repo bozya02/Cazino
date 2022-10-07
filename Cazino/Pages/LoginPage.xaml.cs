@@ -30,7 +30,7 @@ namespace Cazino.Pages
         {
             var login = tbLogin.Text;
             var password = pbPassword.Password;
-            /*
+            
             User user = null;
             if ((user = DataAccess.GetUser(login, password)) != null)
             {
@@ -40,9 +40,6 @@ namespace Cazino.Pages
             {
                 MessageBox.Show("Неверный логин или пароль", "Ошибка");
             }
-            */
-
-            NavigationService.Navigate(new CazinoPage(new User { Login = "123", Points = 15 }));
         }
 
         private void btnRegistration_Click(object sender, RoutedEventArgs e)

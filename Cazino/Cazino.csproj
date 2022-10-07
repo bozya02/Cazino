@@ -73,28 +73,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DB\CazinoEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CazinoEntities.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\CazinoEntities.cs" />
-    <Compile Include="DB\CazinoEntities.Designer.cs">
+    <Compile Include="DB\CazinoModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CazinoEntities.edmx</DependentUpon>
+      <DependentUpon>CazinoModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\CazinoEntities1.cs">
+    <Compile Include="DB\CazinoModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CazinoEntities.tt</DependentUpon>
+      <DependentUpon>CazinoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CazinoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CazinoModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="DB\DataAccess.cs" />
     <Compile Include="DB\sysdiagram.cs">
-      <DependentUpon>CazinoEntities.tt</DependentUpon>
+      <DependentUpon>CazinoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\User.cs">
-      <DependentUpon>CazinoEntities.tt</DependentUpon>
+      <DependentUpon>CazinoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -141,12 +141,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EntityDeploy Include="DB\CazinoEntities.edmx">
+    <EntityDeploy Include="DB\CazinoModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CazinoEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>CazinoModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DB\CazinoEntities.edmx.diagram">
-      <DependentUpon>CazinoEntities.edmx</DependentUpon>
+    <None Include="DB\CazinoModel.edmx.diagram">
+      <DependentUpon>CazinoModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -161,16 +161,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB\CazinoEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CazinoEntities.edmx</DependentUpon>
-      <LastGenOutput>CazinoEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DB\CazinoEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CazinoEntities.edmx</DependentUpon>
-      <LastGenOutput>CazinoEntities1.cs</LastGenOutput>
-    </Content>
     <Resource Include="Resources\points.png" />
     <Resource Include="Resources\image5.png" />
     <Resource Include="Resources\image4.png" />
@@ -178,6 +168,18 @@
     <Resource Include="Resources\image2.png" />
     <Resource Include="Resources\image1.png" />
     <Resource Include="Resources\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\CazinoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CazinoModel.edmx</DependentUpon>
+      <LastGenOutput>CazinoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\CazinoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CazinoModel.edmx</DependentUpon>
+      <LastGenOutput>CazinoModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

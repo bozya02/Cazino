@@ -18,5 +18,8 @@ namespace Cazino.DB
         public string Login { get; set; }
         public string Password { get; set; }
         public int Points { get; set; }
+        public bool IsCreditTaking { get; set; }
+        public int InCreditAttempt { get; set; }
+        public bool IsBankrupt { get; set; }
     }
 }

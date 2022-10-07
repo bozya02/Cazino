@@ -40,11 +40,16 @@ namespace Cazino.Pages
 
         private async void btnSpin_Click(object sender, RoutedEventArgs e)
         {
-            if ()
+            if (User.IsBankrupt)
+            {
+                MessageBox.Show("Вы полный бакнрот, больше здесь вы не играете", "Ты больше не армянин");
+                return;
+            }
             
             if (User.IsCreditTaking && User.InCreditAttempt > 0)
             {
-                User.InCreditAttempt--;
+                if (!IsSpinning)
+                    User.InCreditAttempt--;
             }
             else if (User.IsCreditTaking && User.InCreditAttempt == 0)
             {
@@ -56,6 +61,7 @@ namespace Cazino.Pages
                 {
                     User.IsBankrupt = true;
                     MessageBox.Show("Вы полный бакнрот, больше здесь вы не играете", "ЛОХ");
+                    return;
                 }
                 else
                 {
@@ -126,7 +132,7 @@ namespace Cazino.Pages
 
             tbBalance.Text = User.Points.ToString();
 
-            //CazinoEntities.GetContext().SaveChanges();
+            CazinoEntities.GetContext().SaveChanges();
         }
 
         public void SetImage(ref Image image, int imageNum)
@@ -140,7 +146,7 @@ namespace Cazino.Pages
             tbBalance.Text = User.Points.ToString();
             ChangeCreditVisibility(Visibility.Hidden);
 
-            //CazinoEntities.GetContext().SaveChanges();
+            CazinoEntities.GetContext().SaveChanges();
         }
 
         public void ChangeCreditVisibility(Visibility visibility)
